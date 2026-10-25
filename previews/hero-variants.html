@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>월백반 히어로 시안 4종</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#1c69d4;--blue-deep:#0a4ba1;--navy:#0b1d36;--gold:#ffd84d;--gold-ink:#3a2c00;
+    --sans:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+    --serif:"Nanum Myeongjo","Noto Serif KR",Georgia,serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fafbff;color:#fff;font-family:var(--sans);font-size:18px;line-height:1.7;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  h1,h2,p{margin:0}
+  .wrap{max-width:1100px;margin:0 auto;padding-inline:clamp(20px,4vw,40px)}
+  .hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;
+    background-image:radial-gradient(60% 50% at 50% 0%,rgba(110,193,255,.2),rgba(0,0,0,0) 70%),linear-gradient(#2371d8 0%,#0a4ba1 50%,#0b1d36 100%)}
+  .hero .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%)}
+  .hero .wrap{position:relative;width:100%;padding-block:clamp(72px,8vw,110px);display:flex;flex-direction:column;align-items:center;gap:32px}
+  .tag{position:absolute;left:20px;top:20px;z-index:2;padding:6px 12px;border-radius:999px;background:#fff;color:var(--navy);font-size:13px;font-weight:800;letter-spacing:.08em}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);font-size:16px;font-weight:700;letter-spacing:.02em}
+  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+  .h1{font-weight:800;font-size:clamp(38px,5vw,64px);line-height:1.18;letter-spacing:-.045em}
+  .gold{color:var(--gold)}
+  .sub{font-size:clamp(18px,1.8vw,24px);font-weight:600;line-height:1.55;color:rgba(255,255,255,.92);max-width:34ch}
+  .scroll{margin-top:28px;font-size:13px;letter-spacing:.18em;color:rgba(255,255,255,.85);display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll::after{content:"";width:1px;height:40px;background:rgba(255,255,255,.45)}
+  .col{display:flex;flex-direction:column;align-items:center;gap:22px}
+
+  /* B. 필 3개 */
+  .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .pills span{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);font-size:clamp(16px,1.6vw,20px);font-weight:700}
+  .pills span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+
+  /* C. 체크리스트 */
+  .checks{display:flex;flex-direction:column;align-items:flex-start;gap:14px;text-align:left}
+  .checks div{display:flex;align-items:center;gap:16px;font-size:clamp(24px,2.8vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.3}
+  .checks b{flex:none;width:36px;height:36px;border-radius:50%;background:var(--gold);display:grid;place-content:center}
+  .checks s{text-decoration:none;position:relative}
+  .checks .price{font-size:.55em;font-weight:600;color:rgba(255,255,255,.55);text-decoration:line-through;margin-left:6px}
+
+  /* D. 카드 3장 */
+  .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:min(820px,100%)}
+  .cards div{padding:22px 18px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:6px;align-items:center}
+  .cards span{font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--gold)}
+  .cards b{font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.3}
+  @media (max-width:640px){.cards{grid-template-columns:1fr}.cards div{flex-direction:row;justify-content:flex-start;gap:14px;padding:14px 18px}}
+
+  /* E. 명조 인용 */
+  .quote{font-family:var(--serif);font-size:clamp(22px,2.6vw,34px);line-height:1.6;font-style:italic;font-weight:400;color:rgba(255,255,255,.95)}
+  .qsep{width:40px;height:1px;background:rgba(255,255,255,.35)}
+  .mark{background:linear-gradient(transparent 58%,var(--gold) 58%);color:#fff;padding:0 .08em}
+</style>
+</head>
+<body>
+
+<!-- A. 텍스트 한 덩어리 -->
+<section class="hero"><span class="tag">시안 A · 텍스트</span><div class="grid"></div>
+  <div class="wrap">
+    <div class="col">
+      <span class="eyebrow"><i></i>무료 코스 · 월백반</span>
+      <h1 class="h1" style="max-width:22ch">이론 강의, 전담 조교 배정,<br>심법 관리 프로그램.<br>이걸 왜 다 <span class="gold">무료</span>로<br>제공하냐고요?</h1>
+      <p class="sub">공짜가 아니라 거래입니다.<br>답은 아래에 있습니다.</p>
+    </div>
+    <div class="scroll">SCROLL</div>
+  </div>
+</section>
+
+<!-- B. 필 3개 + 질문 -->
+<section class="hero"><span class="tag">시안 B · 필</span><div class="grid"></div>
+  <div class="wrap">
+    <div class="col">
+      <div class="pills"><span>이론 강의</span><span>전담 조교 배정</span><span>심법 관리 프로그램</span></div>
+      <h1 class="h1" style="max-width:20ch">이걸 왜 다 <span class="gold">무료</span>로<br>제공하냐고요?</h1>
+      <p class="sub">문제는 실력이 아니라 기준이 없는 것입니다.<br>월백반은 그 순서를 바로잡는 훈련입니다.</p>
+    </div>
+    <div class="scroll">SCROLL</div>
+  </div>
+</section>
+
+<!-- C. 체크리스트 + 질문 -->
+<section class="hero"><span class="tag">시안 C · 체크리스트</span><div class="grid"></div>
+  <div class="wrap">
+    <div class="col" style="gap:36px">
+      <div class="checks">
+        <div><b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3a2c00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></b>이론 강의</div>
+        <div><b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3a2c00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></b>전담 조교 배정</div>
+        <div><b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3a2c00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></b>심법 관리 프로그램</div>
+      </div>
+      <h1 class="h1" style="max-width:20ch">이걸 왜 다 <span class="gold">무료</span>로<br>제공하냐고요?</h1>
+    </div>
+    <div class="scroll">SCROLL</div>
+  </div>
+</section>
+
+<!-- D. 카드 3장 + 질문 -->
+<section class="hero"><span class="tag">시안 D · 카드</span><div class="grid"></div>
+  <div class="wrap">
+    <div class="col" style="gap:30px">
+      <span class="eyebrow"><i></i>무료 코스 · 월백반</span>
+      <div class="cards">
+        <div><span>01</span><b>이론 강의</b></div>
+        <div><span>02</span><b>전담 조교 배정</b></div>
+        <div><span>03</span><b>심법 관리 프로그램</b></div>
+      </div>
+      <h1 class="h1" style="max-width:20ch">이걸 왜 다 <span class="mark">무료</span>로<br>제공하냐고요?</h1>
+    </div>
+    <div class="scroll">SCROLL</div>
+  </div>
+</section>
+
+</body>
+</html>

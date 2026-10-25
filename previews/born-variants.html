@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>히어로 2화면 시안 4종</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#ffd84d;--navy:#0b1d36;--blue:#1c69d4;--blue-deep:#0653b6;--ink:#262626}
+  *{box-sizing:border-box;margin:0}
+  body{background:#fafbff;color:#fff;font-family:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:18px;line-height:1.7;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  .yellow{color:var(--yellow)}
+  .sec{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;justify-content:center;
+    background-image:radial-gradient(60% 50% at 50% 0%,rgba(110,193,255,.2),rgba(0,0,0,0) 70%),linear-gradient(#2371d8 0%,#0a4ba1 50%,#0b1d36 100%)}
+  .sec .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%)}
+  .wrap{position:relative;width:100%;max-width:1100px;margin:0 auto;padding:clamp(72px,8vw,110px) clamp(20px,4vw,40px)}
+  .tag{position:absolute;left:20px;top:20px;z-index:2;padding:7px 14px;border-radius:999px;background:#fff;color:var(--navy);font-size:14px;font-weight:800;letter-spacing:.06em}
+  .h2{font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.18;letter-spacing:-.045em;color:#fff}
+  .lead{font-size:clamp(18px,1.9vw,24px);font-weight:600;line-height:1.6}
+  .copy{font-size:clamp(17px,1.5vw,20px);line-height:1.8;color:rgba(255,255,255,.88)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 32px;border-radius:999px;font-size:18px;font-weight:700;text-decoration:none;letter-spacing:-.01em}
+  .btn-yellow{background:var(--yellow);color:#1b1b1b;box-shadow:0 14px 34px -14px rgba(255,216,77,.6)}
+  .btn-ghost{color:#fff;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+  .mark{background:linear-gradient(transparent 62%,rgba(255,216,77,.9) 62%);color:#fff;padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .ck{flex:none;width:30px;height:30px;border-radius:50%;background:var(--yellow);display:grid;place-content:center}
+  .ck svg{width:15px;height:15px;fill:none;stroke:#3a2c00;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+
+  /* A. 중앙 선언형 */
+  .a .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
+  .a .vline{width:1px;height:48px;background:rgba(255,255,255,.4)}
+  .a .give{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;align-items:center}
+  .a .give li{display:flex;align-items:center;gap:12px;font-size:clamp(19px,2vw,26px);font-weight:700;letter-spacing:-.02em}
+  .a .give li small{font-weight:500;color:rgba(255,255,255,.7);font-size:.75em;margin-left:4px}
+
+  /* B. 2단 + 거래 카드 */
+  .b .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .b .left{display:flex;flex-direction:column;gap:24px}
+  .b .left .actions{justify-content:flex-start}
+  .b .stat{display:inline-flex;align-items:baseline;gap:8px;font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;color:var(--yellow)}
+  .b .stat small{font-size:.5em;font-weight:600;color:rgba(255,255,255,.8);letter-spacing:-.01em}
+  .b .card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:24px;padding:32px;backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:22px}
+  .b .card h3{font-size:15px;font-weight:800;letter-spacing:.12em;color:var(--yellow)}
+  .b .card ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:14px}
+  .b .card li{display:flex;align-items:flex-start;gap:12px;font-size:19px;font-weight:600;line-height:1.5}
+  .b .card li span{display:block;font-size:15px;font-weight:400;color:rgba(255,255,255,.7)}
+  .b .card hr{border:0;height:1px;background:rgba(255,255,255,.2)}
+  .b .card .you{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:16px;background:var(--yellow);color:#1b1b1b;font-weight:700;font-size:19px;line-height:1.4}
+  .b .card .you b{flex:none;font-size:13px;letter-spacing:.1em;padding:4px 8px;border-radius:6px;background:#1b1b1b;color:var(--yellow)}
+  @media (max-width:860px){.b .wrap{grid-template-columns:1fr}.b .left{text-align:center}.b .left .actions{justify-content:center}}
+
+  /* C. 교환 조건 시트 */
+  .c .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:36px}
+  .c .sheet{width:min(960px,100%);display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.22);background:rgba(11,29,54,.45);backdrop-filter:blur(8px)}
+  .c .col{padding:32px 30px;text-align:left;display:flex;flex-direction:column;gap:18px}
+  .c .col h3{font-size:14px;font-weight:800;letter-spacing:.14em;color:rgba(255,255,255,.65)}
+  .c .col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:14px}
+  .c .col li{display:flex;align-items:center;gap:12px;font-size:clamp(18px,1.6vw,21px);font-weight:700}
+  .c .col li em{font-style:normal;font-weight:500;color:rgba(255,255,255,.65);font-size:.8em}
+  .c .col.you{background:rgba(255,216,77,.12);justify-content:center}
+  .c .col.you li{font-size:clamp(20px,1.9vw,26px);line-height:1.4;align-items:flex-start}
+  .c .swap{display:grid;place-content:center;padding:0 10px;background:rgba(255,255,255,.06);border-left:1px solid rgba(255,255,255,.14);border-right:1px solid rgba(255,255,255,.14)}
+  .c .swap span{width:52px;height:52px;border-radius:50%;background:var(--yellow);display:grid;place-content:center}
+  .c .swap svg{width:26px;height:26px;fill:none;stroke:#1b1b1b;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  @media (max-width:760px){.c .sheet{grid-template-columns:1fr}.c .swap{padding:10px;border:0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}.c .swap svg{transform:rotate(90deg)}}
+
+  /* D. 인용 강조형 */
+  .d .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:30px}
+  .d .quote{font-size:clamp(24px,3vw,40px);font-weight:800;line-height:1.5;letter-spacing:-.03em;max-width:24ch}
+  .d .quote q{quotes:"‘" "’"}
+  .d .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .d .pills span{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);font-size:clamp(16px,1.5vw,19px);font-weight:700}
+  .d .pills span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+  .d .close{font-size:clamp(19px,2vw,26px);font-weight:700;line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- A -->
+<section class="sec a"><span class="tag">시안 A · 중앙 선언형</span><div class="grid"></div>
+  <div class="wrap">
+    <h2 class="h2">무료가 아니라<br><span class="yellow">거래</span>이기 때문입니다.</h2>
+    <div class="vline"></div>
+    <p class="copy">저희는 <b>9년 차 트레이딩 전문 교육 업체</b>입니다.<br>‘이대로만 하면 월 수입 100만원은 현실적으로 가능하다’라는<br><span class="mark">교육 성과 데이터</span>가 필요합니다.</p>
+    <ul class="give">
+      <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>기법을 잡아줄 이론</li>
+      <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>심법을 잡아줄 프로그램 <small>(W.E.T)</small></li>
+      <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>관리 감독할 전담 조교</li>
+    </ul>
+    <p class="lead">여기까지 제공해 드릴 테니,<br>약 <span class="yellow">한 달간의 교육</span>을 성실히 완수해 주시면 됩니다.</p>
+    <div class="actions"><a class="btn btn-yellow" href="#">무료로 시작하기 →</a><a class="btn btn-ghost" href="#">로그인</a></div>
+  </div>
+</section>
+
+<!-- B -->
+<section class="sec b"><span class="tag">시안 B · 2단 거래 카드</span><div class="grid"></div>
+  <div class="wrap">
+    <div class="left">
+      <h2 class="h2">무료가 아니라<br><span class="yellow">거래</span>이기<br>때문입니다.</h2>
+      <p class="copy">저희는 <span class="stat">9년 차<small>트레이딩 전문 교육 업체</small></span>입니다.<br>‘이대로만 하면 월 수입 100만원은 현실적으로 가능하다’라는 <b>교육 성과 데이터</b>가 필요합니다.</p>
+      <div class="actions"><a class="btn btn-yellow" href="#">무료로 시작하기 →</a><a class="btn btn-ghost" href="#">로그인</a></div>
+    </div>
+    <div class="card">
+      <h3>저희가 드리는 것</h3>
+      <ul>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><div>기법을 잡아줄 이론<span>이론 강의</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><div>심법을 잡아줄 프로그램<span>W.E.T</span></div></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><div>관리 감독할 전담 조교<span>소수 정예</span></div></li>
+      </ul>
+      <hr>
+      <div class="you"><b>YOU</b>약 한 달간의 교육을<br>성실히 완수해 주시면 됩니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- C -->
+<section class="sec c"><span class="tag">시안 C · 교환 조건 시트</span><div class="grid"></div>
+  <div class="wrap">
+    <div>
+      <h2 class="h2">무료가 아니라 <span class="yellow">거래</span>이기 때문입니다.</h2>
+      <p class="copy" style="margin-top:20px">저희는 <b>9년 차 트레이딩 전문 교육 업체</b>입니다.<br>‘이대로만 하면 월 수입 100만원은 현실적으로 가능하다’라는 <b>교육 성과 데이터</b>가 필요합니다.</p>
+    </div>
+    <div class="sheet">
+      <div class="col">
+        <h3>저희가 드립니다</h3>
+        <ul>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>기법을 잡아줄 이론</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>심법을 잡아줄 프로그램 <em>(W.E.T)</em></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>관리 감독할 전담 조교</li>
+        </ul>
+      </div>
+      <div class="swap"><span><svg viewBox="0 0 24 24"><path d="M4 8h13M13 4l4 4-4 4M20 16H7M11 12l-4 4 4 4"/></svg></span></div>
+      <div class="col you">
+        <h3>여러분은</h3>
+        <ul><li>약 한 달간의 교육을<br>성실히 완수해 주시면 됩니다.</li></ul>
+      </div>
+    </div>
+    <div class="actions"><a class="btn btn-yellow" href="#">무료로 시작하기 →</a><a class="btn btn-ghost" href="#">로그인</a></div>
+  </div>
+</section>
+
+<!-- D -->
+<section class="sec d"><span class="tag">시안 D · 인용 강조형</span><div class="grid"></div>
+  <div class="wrap">
+    <h2 class="h2">무료가 아니라 <span class="yellow">거래</span>이기 때문입니다.</h2>
+    <p class="copy">저희는 <b>9년 차 트레이딩 전문 교육 업체</b>입니다. 이런 데이터가 필요합니다.</p>
+    <p class="quote"><q><span class="mark">이대로만 하면</span> 월 수입 100만원은<br>현실적으로 가능하다</q></p>
+    <div class="pills"><span>기법을 잡아줄 이론</span><span>심법을 잡아줄 프로그램 (W.E.T)</span><span>관리 감독할 전담 조교</span></div>
+    <p class="close">여기까지 제공해 드릴 테니,<br>약 <span class="yellow">한 달간의 교육</span>을 성실히 완수해 주시면 됩니다.</p>
+    <div class="actions"><a class="btn btn-yellow" href="#">무료로 시작하기 →</a><a class="btn btn-ghost" href="#">로그인</a></div>
+  </div>
+</section>
+
+</body>
+</html>

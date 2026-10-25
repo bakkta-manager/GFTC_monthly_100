@@ -1,0 +1,107 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T05:36:56.395Z",
+        "reason": "model verified: sections carry padding on the inner .wrap and clamp() paddings on .blk/.why that the detector does not parse; stats divider padding was fixed"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T05:36:56.438Z",
+        "reason": "model decided: price card right-column panel inherited verbatim from the 월천반 page"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T05:37:03.065Z",
+        "reason": "model verified: white text sits on the .hero-bg blue gradient the static analyzer cannot see; gold-on-blue 13px accent inherited verbatim from the 월천반 page"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T05:37:03.100Z",
+        "reason": "model decided: gold CTA/eyebrow glow and navy elevation shadow inherited verbatim from the 월천반/월급반 pages for design consistency"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T06:32:34.629Z",
+        "reason": "model verified: hero h1 white-to-light-blue text gradient mirrors the reference landing page (.hero-b4 h1) the user named as the design reference"
+      },
+      {
+        "rule": "icon-tile-stack",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T06:32:34.654Z",
+        "reason": "model verified: icon tile above heading mirrors the reference landing page's service and philosophy cards the user named as the design reference"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T06:32:34.679Z",
+        "reason": "model verified: only display headings and single-line numerals use line-height 1.0-1.1; body text stays at 1.5-1.9"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "previews/scroll-cue-variants.html"
+        ],
+        "createdAt": "2026-10-25T06:32:34.704Z",
+        "reason": "user requested: animated scroll-cue variants; ring pulse is a deliberate scroll affordance, not a status indicator"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "previews/born-variants.html"
+        ],
+        "createdAt": "2026-10-25T10:49:49.401Z",
+        "reason": "model decided: 레퍼런스 히어로 패턴(반투명 보조 텍스트, 노란 CTA 글로우)과 일치 — 메인 페이지와 동일 스타일"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "previews/born-variants.html"
+        ],
+        "createdAt": "2026-10-25T10:49:49.401Z",
+        "reason": "model decided: 레퍼런스 히어로 패턴(반투명 보조 텍스트, 노란 CTA 글로우)과 일치 — 메인 페이지와 동일 스타일"
+      },
+      {
+        "rule": "undersized-ui-text",
+        "value": "*",
+        "files": [
+          "previews/born-variants.html"
+        ],
+        "createdAt": "2026-10-25T10:50:17.934Z",
+        "reason": "model verified: smallest absolute size is 13px; em-based smalls (.5em/.75em/.8em) resolve to 14px+ against 19-40px parents the static analyzer does not compute"
+      }
+    ]
+  }
+}
