@@ -101,6 +101,24 @@
         ],
         "createdAt": "2026-10-25T10:50:17.934Z",
         "reason": "model verified: smallest absolute size is 13px; em-based smalls (.5em/.75em/.8em) resolve to 14px+ against 19-40px parents the static analyzer does not compute"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "previews/born-variants-2.html"
+        ],
+        "createdAt": "2026-10-25T11:05:34.109Z",
+        "reason": "model verified: white text sits on the .sec blue gradient background-image the static analyzer reads as the body #fafbff; same pattern as index.html hero"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "previews/born-variants-2.html"
+        ],
+        "createdAt": "2026-10-25T11:05:57.068Z",
+        "reason": "model verified: tracking >.05em only on 2-6 character labels (01/02/03 numbers, 거래 조건, 저희가 드리는 것, FREE 0원 stamp), never on body copy"
       }
     ]
   }

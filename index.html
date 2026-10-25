@@ -73,19 +73,21 @@
   .hero .grid,.born-sec .grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%)}
   .hero .wrap,.born-sec .wrap{position:relative;width:100%;padding-block:clamp(72px,8vw,110px);display:flex;flex-direction:column;align-items:center;gap:32px}
   .hero .idea{display:flex;flex-direction:column;align-items:center;gap:44px}
-  .born-sec .wrap{padding-block:clamp(40px,5vw,64px)}
-  .born-sec .born{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .born-sec .wrap{padding-block:24px}
+  .born-sec .born{display:flex;flex-direction:column;align-items:center;gap:32px}
+  .born-sec .vline{margin:-8px 0}
   .born-sec .hero-h1{font-size:clamp(38px,5vw,64px)}
   .born-sec .vline{width:1px;height:32px;background:rgba(255,255,255,.4)}
-  .born-copy{font-size:clamp(17px,1.5vw,20px);line-height:1.8;color:rgba(255,255,255,.88);max-width:62ch}
+  .born-copy{font-size:clamp(19px,1.7vw,22px);line-height:1.85;color:rgba(255,255,255,.92);max-width:44ch}
   .born-copy b{color:#fff}
+  .born-copy .yellow{color:var(--yellow)}
   .mark{background:linear-gradient(transparent 62%,rgba(255,216,77,.9) 62%);padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-  .give{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;align-items:center}
-  .give li{display:flex;align-items:center;gap:12px;font-size:clamp(19px,2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.3}
-  .give li small{font-weight:500;color:rgba(255,255,255,.7);font-size:.75em;margin-left:4px}
-  .give b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--yellow);display:grid;place-content:center}
-  .give b svg{width:15px;height:15px;fill:none;stroke:#3a2c00;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
-  .born-lead{font-size:clamp(18px,1.9vw,24px);font-weight:600;line-height:1.6}
+  .give{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;align-items:center}
+  .give li{display:flex;align-items:center;gap:14px;font-size:clamp(21px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;line-height:1.35}
+  .give li small{font-weight:500;color:rgba(255,255,255,.8);font-size:.75em;margin-left:4px}
+  .give b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--yellow);display:grid;place-content:center}
+  .give b svg{width:17px;height:17px;fill:none;stroke:#3a2c00;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+  .born-lead{font-size:clamp(20px,2vw,26px);font-weight:600;line-height:1.65;text-wrap:balance}
   .hero-h1{font-weight:800;font-size:clamp(44px,6.4vw,84px);line-height:1.18;letter-spacing:-.045em;color:#fff}
   .checks{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
   .checks li{display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(28px,3.4vw,46px);font-weight:700;letter-spacing:-.03em;line-height:1.3}
@@ -96,7 +98,7 @@
   .hero .scroll .chev{width:22px;height:22px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
   .hero .scroll .chev+.chev{margin-top:-24px;opacity:.5}
   .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:12px}
-  .actions .btn{min-height:52px;padding:14px 28px}
+  .actions .btn{min-height:58px;padding:14px 34px;font-size:19px}
   .btn-yellow{background:var(--yellow);color:var(--navy);box-shadow:0 0 20px -4px rgba(255,216,77,.6)}
   .btn-yellow:hover{background:#f5c518;transform:translateY(-1px)}
   @keyframes heroRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -267,9 +269,22 @@
   @keyframes tapeStick{0%{opacity:0;transform:translate(-50%,-16px) rotate(-10deg) scale(1.15)}65%{opacity:1;transform:translate(-50%,2px) rotate(0deg) scale(.97)}100%{opacity:1;transform:translate(-50%,0) rotate(-1.5deg) scale(1)}}
   @keyframes hlSweep{from{background-size:0% 100%}to{background-size:100% 100%}}
   @keyframes faqOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-  .plan li:nth-child(1),.fit-col li:nth-child(1){--i:0}.plan li:nth-child(2),.fit-col li:nth-child(2){--i:1}.plan li:nth-child(3),.fit-col li:nth-child(3){--i:2}
+  .plan li:nth-child(1),.fit-col li:nth-child(1),.give li:nth-child(1){--i:0}.plan li:nth-child(2),.fit-col li:nth-child(2),.give li:nth-child(2){--i:1}.plan li:nth-child(3),.fit-col li:nth-child(3),.give li:nth-child(3){--i:2}
   .plan li:nth-child(4),.fit-col li:nth-child(4){--i:3}.plan li:nth-child(5){--i:4}.plan li:nth-child(6){--i:5}
   @media (prefers-reduced-motion:no-preference){
+    /* 히어로 2화면: 제목 → 선 → 설명 → 체크 3개 → 마무리 → 버튼 순서로 */
+    .born.sr{transform:none}
+    .born.sr>*{opacity:0}
+    .born.sr.is-visible>*{animation:riseIn .7s cubic-bezier(.22,1,.36,1) forwards}
+    .born.sr.is-visible .vline{opacity:1;animation-name:growY;transform-origin:top;animation-delay:.35s}
+    .born.sr.is-visible .born-copy{animation-delay:.55s}
+    .born.sr.is-visible .give{opacity:1;animation:none}
+    .born.sr .give li{opacity:0}
+    .born.sr.is-visible .give li{animation:slideL .55s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(1s + var(--i)*.14s)}
+    .born.sr .give b{opacity:0;transform:scale(0)}
+    .born.sr.is-visible .give b{animation:popIn .5s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(1.1s + var(--i)*.14s)}
+    .born.sr.is-visible .born-lead{animation-delay:1.55s}
+    .born.sr.is-visible .actions{animation-delay:1.8s}
     /* 플랜 카드: 카드 → 배지 → 가격 → 항목 순서로, 체크는 튀어오르고 선이 그려진다 */
     .plan.sr{transform:translateY(28px) scale(.97)}
     .plan.sr.is-visible{transform:none}
@@ -357,8 +372,9 @@
     .hero-h1{font-size:clamp(36px,9.6vw,46px)}
     .born-sec .hero-h1{font-size:clamp(32px,8.6vw,40px)}
     .pc{display:none}
-    .born-copy{font-size:16px}
-    .give li{font-size:19px}
+    .born-copy{font-size:18px;line-height:1.8}
+    .give li{font-size:21px}
+    .born-lead{font-size:20px}
     .actions{flex-direction:column;align-items:stretch;width:min(100%,360px)}
     .problem-block h2{margin-bottom:28px}
     .problem-list li{font-size:17px;padding:14px 16px}
@@ -419,18 +435,18 @@
   <section class="born-sec" id="born" aria-label="무료인 이유">
     <div class="grid" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="born">
+      <div class="born sr">
         <h2 class="hero-h1">무료가 아니라<br><span class="yellow">거래</span>이기 때문입니다.</h2>
         <div class="vline" aria-hidden="true"></div>
-        <p class="born-copy">저희는 <b>9년 차 트레이딩 전문 교육 업체</b>입니다.<br class="pc"> ‘이대로만 하면 월 수입 100만원은 현실적으로 가능하다’라는<br class="pc"> <span class="mark">교육 성과 데이터</span>가 필요합니다.</p>
+        <p class="born-copy">저희는 <b>9년 차 트레이딩 전문 교육 업체</b>입니다.<br class="pc"> ‘이대로만 하면 월 수입 100만원은 현실적으로 가능하다’라는<br class="pc"> <b class="yellow">교육 성과 데이터</b>가 필요합니다.</p>
         <ul class="give">
           <li><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></b>기법을 잡아줄 이론</li>
           <li><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></b>심법을 잡아줄 프로그램 <small>(W.E.T)</small></li>
           <li><b aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></b>관리 감독할 전담 조교</li>
         </ul>
-        <p class="born-lead">여기까지 제공해 드릴 테니,<br>약 <span class="yellow">한 달간의 교육</span>을 성실히 완수해 주시면 됩니다.</p>
+        <p class="born-lead">여기까지 제공해 드릴 테니,<br><span class="yellow">교육</span>을 성실히 완수해 주시면 됩니다.</p>
         <div class="actions">
-          <a class="btn btn-yellow" href="#pricing">무료로 시작하기</a>
+          <a class="btn btn-yellow" href="#pricing">월백반 무료 코스 시작하기</a>
         </div>
       </div>
     </div>
