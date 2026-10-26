@@ -119,6 +119,26 @@
         ],
         "createdAt": "2026-10-25T11:05:57.068Z",
         "reason": "model verified: tracking >.05em only on 2-6 character labels (01/02/03 numbers, 거래 조건, 저희가 드리는 것, FREE 0원 stamp), never on body copy"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(.34,1.56,.64,1)",
+        "files": [
+          "index.html",
+          "previews/polish.html"
+        ],
+        "createdAt": "2026-10-26T04:00:34.303Z",
+        "reason": "sanctioned: overshoot easing only on small check-circle/icon pop-ins (popIn, hover scale on 20-44px badges), user-approved animation set; no layout-level bounce"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html",
+          "previews/polish.html"
+        ],
+        "createdAt": "2026-10-26T04:00:34.303Z",
+        "reason": "false positive: background-position keyframes (flow on timeline line, goldShift on gradient text, badgeSheen) animate decorative gradients only; no content auto-scrolls"
       }
     ]
   }
