@@ -1,0 +1,6 @@
+# GitHub Pages 공개 범위 — 웹에는 공개 페이지(index.html + assets)만 올리고, 시안·참고 파일은 레포에만 둔다
+# (2026-10-26 대표 「상세페이지 켜」 — 고치기 전 문장이 남은 시안이 웹 주소로 열리지 않게)
+exclude:
+  - previews
+  - reference
+  - .impeccable
