@@ -292,7 +292,7 @@
     /* 히어로 2화면: 제목 → 선 → 설명 → 체크 3개 → 마무리 → 버튼 순서로 */
     .born.sr{transform:none}
     .born.sr>*{opacity:0}
-    .born.sr.is-visible>*{animation:riseIn .7s cubic-bezier(.22,1,.36,1) forwards}
+    .born.sr.is-visible>*{opacity:1;animation:riseIn .7s cubic-bezier(.22,1,.36,1) forwards}
     .born.sr.is-visible .vline{opacity:1;animation-name:growY;transform-origin:top;animation-delay:.35s}
     .born.sr.is-visible .born-copy{animation-delay:.55s}
     .born.sr.is-visible .give{opacity:1;animation:none}
@@ -308,7 +308,7 @@
     .plan.sr{transform:translateY(28px) scale(.97)}
     .plan.sr.is-visible{transform:none}
     .plan.sr>*{opacity:0}
-    .plan.sr.is-visible>*{animation:riseIn .6s cubic-bezier(.22,1,.36,1) forwards}
+    .plan.sr.is-visible>*{opacity:1;animation:riseIn .6s cubic-bezier(.22,1,.36,1) forwards}
     .plan.sr.is-visible .plan-badge{animation-name:popIn;animation-timing-function:cubic-bezier(.34,1.56,.64,1);animation-delay:.15s}
     .plan.sr.is-visible .plan-price{animation-delay:.25s}
     .plan.sr.is-visible .plan-price strong{display:inline-block;animation:priceUp .7s cubic-bezier(.22,1,.36,1) .3s both}
@@ -452,7 +452,7 @@
 
   /* 섹션 바탕 — 광원과 결 */
   .section>.wrap{position:relative;z-index:1}
-  .section::before{content:"";position:absolute;inset:0;pointer-events:none}
+  .section::before,footer::before{content:"";position:absolute;inset:0;pointer-events:none}
   .section:not(.tint){background:linear-gradient(180deg,#fff 0%,#fafbff 100%)}
   .section:not(.tint)::before{background:radial-gradient(42% 38% at 88% 8%,rgba(28,105,212,.07),transparent 70%),radial-gradient(38% 34% at 8% 92%,rgba(255,216,77,.1),transparent 70%)}
   .section.tint{background:linear-gradient(180deg,#f3f5fa 0%,#eef2f9 100%)}
@@ -510,7 +510,7 @@
   .phil-card .ic{background:linear-gradient(160deg,rgba(60,140,255,.5),rgba(28,105,212,.25));box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 10px 24px -10px rgba(28,105,212,.8)}
   /* 철학: 박스가 아니라 섹션 전체가 네이비 */
   .section.philosophy-sec{padding:120px 0;background:linear-gradient(160deg,#10294f 0%,#0b1d36 55%,#071428 100%);box-shadow:inset 0 24px 40px -30px rgba(0,0,0,.5),inset 0 -24px 40px -30px rgba(0,0,0,.5)}
-  .section.philosophy-sec::before{background:var(--noise),radial-gradient(60% 50% at 50% 0%,rgba(110,193,255,.22),transparent 70%),radial-gradient(40% 40% at 90% 100%,rgba(255,216,77,.08),transparent 70%),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:180px 180px,100% 100%,100% 100%,56px 56px,56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 25%,transparent 85%);mask-image:radial-gradient(ellipse at 50% 30%,#000 25%,transparent 85%)}
+  .section.philosophy-sec::before,footer::before{background:var(--noise),radial-gradient(60% 50% at 50% 0%,rgba(110,193,255,.22),transparent 70%),radial-gradient(40% 40% at 90% 100%,rgba(255,216,77,.08),transparent 70%),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:180px 180px,100% 100%,100% 100%,56px 56px,56px 56px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 25%,transparent 85%);mask-image:radial-gradient(ellipse at 50% 30%,#000 25%,transparent 85%)}
   .philosophy-sec .philosophy{padding:0;border-radius:0;background:none;box-shadow:none;overflow:visible}
   .philosophy-sec .philosophy::before{display:none}
 
@@ -553,8 +553,11 @@
   .plan hr{background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
 
   /* 푸터 */
-  footer{background:linear-gradient(180deg,#f6f8fd 0%,#edf1f8 100%);border-top-color:transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
-  .notice-card{background:var(--card);box-shadow:var(--hi),var(--sh-sm)}
+  footer{position:relative;background:linear-gradient(160deg,#10294f 0%,#0b1d36 55%,#071428 100%);border-top-color:transparent;box-shadow:inset 0 24px 40px -30px rgba(0,0,0,.5)}
+  .notice-card{position:relative;padding:0;border:0;background:none;box-shadow:none}
+  .notice-card h2{color:rgba(255,255,255,.75)}
+  .notice-card li{color:#fff}
+  .notice-card li::before{color:rgba(255,255,255,.6)}
 
   /* 호버 — 더 깊은 그림자 */
   @media (prefers-reduced-motion:no-preference){
