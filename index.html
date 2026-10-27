@@ -154,9 +154,9 @@
   .ccard{padding:32px 28px;border-radius:20px;background:#fff;border:1px solid var(--border);transition:transform .25s,box-shadow .25s,border-color .25s}
   .ccard .ic{width:56px;height:56px;border-radius:16px;background:#e8f1ff;display:grid;place-items:center;margin-bottom:22px}
   .ccard .ic svg{width:30px;height:30px;fill:none;stroke:var(--blue);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .ccard .step{display:block;font-size:16px;font-weight:700;letter-spacing:.06em;color:var(--blue);margin-bottom:6px}
-  .ccard h3{font-size:22px;letter-spacing:-.035em;margin-bottom:12px}
-  .ccard p{font-size:16px;line-height:1.8;color:var(--body)}
+  .ccard .step{display:inline-block;font-size:16px;font-weight:700;letter-spacing:.06em;color:var(--blue);margin-right:12px;vertical-align:baseline}
+  .ccard h3{display:inline;font-size:22px;letter-spacing:-.035em}
+  .ccard p{margin-top:12px;font-size:16px;line-height:1.8;color:var(--body)}
   .lock-note{display:flex;align-items:center;justify-content:center;gap:12px;width:max-content;max-width:100%;margin:40px auto 0;padding:14px 22px;border-radius:999px;background:#fff;border:1px solid var(--border-strong);font-size:16px;font-weight:600;color:var(--body)}
   .lock-note svg{width:20px;height:20px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
@@ -1016,6 +1016,7 @@
     function targetFor(direction) {
       var points = stops(), y = window.scrollY;
       if (y > points[2] + 2 || (direction > 0 && y >= points[2] - 2)) return null;
+      if (window.innerWidth <= 720) return null;
       if (pages.slice(0, 2).some(function (page) { return page.offsetHeight > window.innerHeight + 4; })) return null;
       if (direction > 0) { for (var i = 1; i < points.length; i++) if (points[i] > y + 2) return i; }
       else { for (var j = points.length - 2; j >= 0; j--) if (points[j] < y - 2) return j; }
