@@ -1111,5 +1111,16 @@
     });
   })();
 </script>
+<script>
+  // 영상 설명란 링크로 들어온 utm_* 를 신청서 주소에 그대로 붙인다(신청서가 첫 유입과 영상 귀속을 기억하도록). 쿼리가 없으면 주소는 그대로다.
+  (function () {
+    if (typeof URLSearchParams === "undefined") return;
+    var kept = new URLSearchParams();
+    new URLSearchParams(window.location.search).forEach(function (value, key) { if (key.indexOf("utm_") === 0) kept.append(key, value); });
+    var query = kept.toString();
+    if (!query) return;
+    document.querySelectorAll('a[href="https://www.waveenergytrading.com/course/apply"]').forEach(function (a) { a.setAttribute("href", a.getAttribute("href") + "?" + query); });
+  })();
+</script>
 </body>
 </html>
